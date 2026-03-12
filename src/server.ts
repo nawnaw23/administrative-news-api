@@ -15,6 +15,7 @@ import announcementRouter from "./routes/announcement.route";
 import districtRouter from "./routes/district.route";
 import aboutRouter from "./routes/about.route";
 import twonshipRouter from "./routes/twonship.route";
+import reportRouter from "./routes/report.route";
 
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000,
@@ -77,6 +78,7 @@ app.use('/announcements', announcementRouter);
 app.use('/districts', districtRouter);
 app.use('/townships', twonshipRouter);
 app.use('/about', aboutRouter);
+app.use('/reports', reportRouter);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({
